@@ -8,7 +8,7 @@ Create cluster:
 
 Start on the cluster:
 
-    kubectl run twistlocktest --image=gcr.io/chees-info/twistlocktest:v1 --port=8080
+    kubectl run twistlocktest --image=eu.gcr.io/chees-info/twistlocktest:v3 --port=8080
 
 Create a loadbalancer:
 
@@ -34,3 +34,7 @@ Scale replication controller:
 Scale nodes:
 
     gcloud container clusters resize
+
+Rolling update:
+
+    kubectl rolling-update twistlocktest --image=eu.gcr.io/chees-info/twistlocktest:v4
