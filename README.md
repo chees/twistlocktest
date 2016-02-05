@@ -1,3 +1,16 @@
+# Deploy new version
+
+Build and push to gcr.io:
+
+    ./build_and_push.sh
+
+Rolling update:
+
+    kubectl rolling-update twistlocktest --image=eu.gcr.io/chees-info/twistlocktest:v4
+
+
+# One time setup
+
 Build and push to gcr.io:
 
     ./build_and_push.sh
@@ -18,6 +31,9 @@ To get the external ip of the loadbalancer:
 
     kubectl get services twistlocktest
 
+
+# Handy stuff
+
 View:
 
     open http://104.155.61.161:8080/Christiaan
@@ -33,8 +49,5 @@ Scale replication controller:
 
 Scale nodes:
 
-    gcloud container clusters resize
+    gcloud container clusters resize cluster-1 2
 
-Rolling update:
-
-    kubectl rolling-update twistlocktest --image=eu.gcr.io/chees-info/twistlocktest:v4
